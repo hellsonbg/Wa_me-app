@@ -47,7 +47,6 @@ while True:
     while True:
         
         event, values = tela.read()
-        print(event,values)
 
 ######## tratamento do input do telefone e DDD
 
@@ -74,19 +73,16 @@ while True:
             webbrowser.open('https://github.com/hellsonbg', new=1)
 
         if event in(sg.WIN_CLOSED,"-CANCEL-"):
-            print("USUARIO ESCOLHEU SAIR")
             janela.close()
             break
         if event == "-SUBMIT-":
 
-            print("USUARIO CLICOU OK")
             #extrair dados da tela
             tel = values["-TEL-"]
             ddd = values["-DDD-"]
             cd = "55"#declara código 55 para o telefone padrão 
             tel_com = cd+ddd+tel
             wp = tel_com #colocando o telefone completo na variavel
-            print(tel_com)
             link = "https://wa.me/{}".format(wp)#ajustando o link
 
             #variaveis que guardam a validação para os números informados após apertar ok 
@@ -103,7 +99,6 @@ while True:
                 if validacao_tel and validacao_ddd == 1: #guarda na variavel de validação se todos os requisitos foram cumpridos
                     validacao = 1
                 
-                print(validacao)
                 break
             
             if validacao == 0: #se os requisitos não forem cumpridos, dá o aviso do que não está de acordo
