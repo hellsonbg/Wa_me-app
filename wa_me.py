@@ -26,7 +26,7 @@ while True:
 
     #layout imagem da janela principal
     layout_esq =[[Push(),sg.Image(filename='wpp.png'),Push()],
-    [sg.Text('Made by hellsonbg  ➜',font=font2),sg.Button(image_data=github_png,key=("-LINK-"),button_color=(sg.theme_background_color()),border_width=0,size=(4,4)),Push()]]
+    [Push(),sg.Text(' Github   ➜',font=font2),sg.Button(image_data=github_png,key=("-LINK-"),button_color=(sg.theme_background_color()),border_width=0,size=(4,4)),Push()]]
     #layout da input dados
     layout_dir=[
     [Push(),sg.Text("Insira o Telefone:"),Push()],
