@@ -3,6 +3,7 @@ import PySimpleGUI as sg
 from PySimpleGUI import Column
 from PySimpleGUI import Push
 import webbrowser
+from images import *
 
 
 #variavel que guarda o telefone informado
@@ -18,18 +19,24 @@ ddd_val = ['27','11','12','13','14','15','16','17','18',
 
 #tema de cores do app
 sg.change_look_and_feel('DarkGreen5')
-
+font2 = ("Arial", 7)
 while True:
 
     
 
     #layout imagem da janela principal
-    layout_esq =[[sg.Image(filename='wpp.png')]]
+    layout_esq =[[Push(),sg.Image(filename='wpp.png'),Push()],
+    [sg.Text('Made by hellsonbg  ➜',font=font2),sg.Button(image_data=github_png,key=("-LINK-"),button_color=(sg.theme_background_color()),border_width=0,size=(4,4)),Push()]]
     #layout da input dados
-    layout_dir=[[Push(),sg.Text("Insira o Telefone:"),Push()],[sg.Text('DDD:',size=(4,0)),sg.Input(size=(2,0),key=("-DDD-"),enable_events=True)
-    , sg.Text('Tel:'),sg.Input(size=(9,0),key=("-TEL-"),enable_events=True),sg.Button("OK",key=("-SUBMIT-"),button_color='green'),sg.Button("SAIR",key=("-CANCEL-"),button_color='red')
-    ],[Push(),sg.Button('https://github.com/hellsonbg',button_color=(sg.theme_background_color()),
-          border_width=0,key=("-LINK-"))]]
+    layout_dir=[
+    [Push(),sg.Text("Insira o Telefone:"),Push()],
+    [],
+    [sg.Text('DDD:',size=(4,0)),sg.Input(size=(2,0),key=("-DDD-"),enable_events=True),sg.Text('Tel:'),sg.Input(size=(9,0),key=("-TEL-"),enable_events=True),sg.Button("OK",key=("-SUBMIT-"),button_color='green'),sg.Button("SAIR",key=("-CANCEL-"),button_color='red')],
+    
+    
+    
+    
+    ]
 
 
     #layout janela principal
